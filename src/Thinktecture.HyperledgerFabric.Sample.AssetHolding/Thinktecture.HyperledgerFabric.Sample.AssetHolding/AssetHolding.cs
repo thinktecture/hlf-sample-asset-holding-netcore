@@ -39,7 +39,7 @@ namespace Thinktecture.HyperledgerFabric.Sample.AssetHolding
                 return Shim.Error("Expecting integer value for asset holding");
 
 
-            if (await stub.PutState("a", aValue) && await stub.PutState("b", bValue)) return Shim.Success();
+            if (await stub.PutState(args.Get<string>(0), aValue) && await stub.PutState(args.Get<string>(2), bValue)) return Shim.Success();
 
             return Shim.Error("Error during Chaincode init!");
         }
