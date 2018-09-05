@@ -47,7 +47,7 @@ namespace Thinktecture.HyperledgerFabric.Sample.AssetHolding.Contract
             return accountValueBytes;
         }
 
-        public async Task<ByteString> Invoke(
+        public async Task<ByteString> Transfer(
             IContractContext context,
             string firstAccount,
             string secondAccount,

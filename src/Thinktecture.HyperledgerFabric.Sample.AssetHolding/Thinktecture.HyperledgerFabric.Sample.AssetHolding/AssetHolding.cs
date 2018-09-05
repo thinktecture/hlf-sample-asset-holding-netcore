@@ -19,8 +19,8 @@ namespace Thinktecture.HyperledgerFabric.Sample.AssetHolding
             _logger = logger;
             _invocationMap = new ChaincodeInvocationMap
             {
-                {"invoke", InternalInvoke},
-                {"query", InternalQuery}
+                {"Transfer", InternalTransfer},
+                {"Query", InternalQuery}
             };
         }
 
@@ -64,7 +64,7 @@ namespace Thinktecture.HyperledgerFabric.Sample.AssetHolding
             return aValueBytes;
         }
 
-        private async Task<ByteString> InternalInvoke(IChaincodeStub stub, Parameters args)
+        private async Task<ByteString> InternalTransfer(IChaincodeStub stub, Parameters args)
         {
             args.AssertCount(3);
 
